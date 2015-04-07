@@ -22,10 +22,11 @@ another
 import sys
 
 with open(sys.argv[1], 'r') as input:
-    test_cases = input.read().strip().splitlines()
+    test_cases = input.read().splitlines()
 
 for test in test_cases:
-    longest, length = '', 0
+    length = 0
+    longest = ''
     words = test.split()
     for word in words:
         if len(word) > length:
