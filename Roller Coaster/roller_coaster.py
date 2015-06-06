@@ -33,12 +33,13 @@ The length of each utterance does not exceed 1000 characters
 import sys
 from string import ascii_letters
 
-with open(sys.argv[1], 'r') as input:
-    test_cases = input.read().strip().splitlines()
+with open(sys.argv[1], 'r') as f:
+    test_cases = f.read().splitlines()
 
 
 for test in test_cases:
-    uppercase, line = True, []
+    uppercase = True
+    line = []
     for letter in test:
         line.append(letter.upper() if letter in ascii_letters and uppercase else letter)
         uppercase = not uppercase if letter in ascii_letters else uppercase
